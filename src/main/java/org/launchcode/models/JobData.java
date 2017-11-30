@@ -6,6 +6,7 @@ import org.apache.commons.csv.CSVRecord;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -132,7 +133,7 @@ public class JobData {
         try {
 
             // Open the CSV file and set up pull out column header info and records
-            Resource resource = new ClassPathResource(DATA_FILE);
+            org.springframework.core.io.Resource resource = new ClassPathResource(DATA_FILE);
             InputStream is = resource.getInputStream();
             Reader reader = new InputStreamReader(is);
             CSVParser parser = CSVFormat.RFC4180.withFirstRecordAsHeader().parse(reader);

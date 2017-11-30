@@ -26,17 +26,35 @@
 
         </p>
 
+
         <p>
             <label for="searchTerm">Keyword:</label>
             <input type="text" name="searchTerm" id="searchTerm" />
         </p>
 
         <input type="submit" value="Search" />
+
+
     </form>
+
 
     <hr />
 
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
+
+    <div th:if="${jobs} and ${jobs.size()}">
+
+        <table>
+
+            <tr th:each="job, idx : ${jobs}" th:class="${idx.odd} ? 'odd'">
+                <!--<td th:each="job : ${jobs}"></td>-->
+                <th th:text="${job}">job</th>
+
+            </tr>
+        </table>
+
+    </div>
+
 
 </div>
 
