@@ -42,9 +42,10 @@
 
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
 
+<div class="container-body-content">
+    <h1 th:if="${jobs}" th:text="${jobs.size() + ' Jobs Found'}"></h1>
+    <div  th:if="${jobs} and ${jobs.size()}" >
 
-    <div class="container-body-content" th:if="${jobs} and ${jobs.size()}" >
-        <h1 th:if="${jobs} and ${jobs.size()}" th:text="${jobs.size() + ' Jobs Found'}"></h1>
         <table th:each="job : ${jobs}">
             <tr th:each="jobField : ${job}">
                 <td th:text="${jobField.key}"></td>
@@ -52,7 +53,7 @@
             </tr>
             <br></br>
         </table>
-
+    </div>
     </div>
 
 
