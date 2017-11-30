@@ -27,5 +27,20 @@
         </div>
     </div>
 
+    <div th:fragment="job-field-value" class="footer">
+        <div  th:if="${jobs} and ${jobs.size()}" >
+
+            <table class="container-body-content" th:each="job : ${jobs}">
+                <tr th:each="jobField : ${job}">
+                    <td th:text="${jobField.key}"></td>
+                    <td th:text="${jobField.value}"></td>
+                </tr>
+                <br></br>
+            </table>
+
+        </div>
+
+    </div>
+
 </body>
 </html>

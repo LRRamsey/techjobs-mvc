@@ -42,22 +42,10 @@
 
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
 
-    <!-- <div th:if="${jobs} and ${jobs.size()}">
 
-        <table>
-
-            <tr th:each="job, idx : ${jobs}" th:class="${idx.odd} ? 'odd'">
-                <td th:each="aJob : ${job.keySet()}"></td>
-                <td th:text="${aJob.get(job)}"></td>
-
-            </tr>
-        </table>
-
-    </div>-->
-
-    <div  th:if="${jobs} and ${jobs.size()}" >
-
-        <table class="container-body-content" th:each="job : ${jobs}">
+    <div class="container-body-content" th:if="${jobs} and ${jobs.size()}" >
+        <h1 th:if="${jobs} and ${jobs.size()}" th:text="${jobs.size() + ' Jobs Found'}"></h1>
+        <table th:each="job : ${jobs}">
             <tr th:each="jobField : ${job}">
                 <td th:text="${jobField.key}"></td>
                 <td th:text="${jobField.value}"></td>
